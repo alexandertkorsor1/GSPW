@@ -31,9 +31,9 @@ const Login = ({ onLogin }) => {
         { email: 'admin@gspw1', pass: 'admingspw123', role: 'admin', name: 'Super Admin' },
         { email: 'finance@gspw1', pass: 'finance123', role: 'department', dept: 'Financial', name: 'Finance Rep' },
         { email: 'admission@gspw1', pass: 'admission123', role: 'department', dept: 'Admission', name: 'Admissions Rep' },
-        { email: 'counseling@gspw1', pass: 'counseling123', role: 'department', dept: 'Counseling', name: 'Counseling Rep' },
-        { email: 'operations@gspw1', pass: 'operations123', role: 'department', dept: 'Operations', name: 'Operations Rep' },
-        { email: 'marketing@gspw1', pass: 'marketing123', role: 'department', dept: 'Marketing', name: 'Marketing Rep' }
+        { email: 'counsel@gspw1', pass: 'counsel123', role: 'department', dept: 'Counseling', name: 'Counseling Rep' },
+        { email: 'operation@gspw1', pass: 'operation123', role: 'department', dept: 'Operations', name: 'Operations Rep' },
+        { email: 'market@gspw1', pass: 'market123', role: 'department', dept: 'Marketing', name: 'Marketing Rep' }
       ];
 
       // Simulate authentication allowing newPassword if successfully changed
