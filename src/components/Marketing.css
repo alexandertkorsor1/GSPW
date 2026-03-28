@@ -1,0 +1,86 @@
+.mkt-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mkt-icon-wrap {
+  background-color: #fff1f2;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.mkt-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.mkt-subtitle {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.mkt-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mkt-stat-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.mkt-stat-label {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.mkt-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mkt-card-campaigns {
+  background-color: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+.mkt-card-campaigns .mkt-stat-label { color: #be123c; }
+.mkt-card-campaigns .mkt-stat-value { color: #881337; }
+
+.mkt-card-leads {
+  background-color: #f5f3ff;
+  border: 1px solid #ddd6fe;
+}
+.mkt-card-leads .mkt-stat-label { color: #6d28d9; }
+.mkt-card-leads .mkt-stat-value { color: #4c1d95; }
+
+.mkt-card-conversion {
+  background-color: #ffedd5;
+  border: 1px solid #fed7aa;
+}
+.mkt-card-conversion .mkt-stat-label { color: #c2410c; }
+.mkt-card-conversion .mkt-stat-value { color: #7c2d12; }
+
+.mkt-info-box {
+  padding: 1.5rem;
+  background-color: var(--bg-main);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.mkt-info-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.mkt-info-text {
+  color: var(--text-muted);
+  margin: 0;
+}

@@ -1,0 +1,86 @@
+.fin-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.fin-icon-wrap {
+  background-color: #ecfdf5;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.fin-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.fin-subtitle {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.fin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.fin-stat-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.fin-stat-label {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.fin-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.fin-card-revenue {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+.fin-card-revenue .fin-stat-label { color: #065f46; }
+.fin-card-revenue .fin-stat-value { color: #064e3b; }
+
+.fin-card-expenses {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+}
+.fin-card-expenses .fin-stat-label { color: #991b1b; }
+.fin-card-expenses .fin-stat-value { color: #7f1d1d; }
+
+.fin-card-profit {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+.fin-card-profit .fin-stat-label { color: #1e40af; }
+.fin-card-profit .fin-stat-value { color: #1e3a8a; }
+
+.fin-info-box {
+  padding: 1.5rem;
+  background-color: var(--bg-main);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.fin-info-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.fin-info-text {
+  color: var(--text-muted);
+  margin: 0;
+}

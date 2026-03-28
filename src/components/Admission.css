@@ -1,0 +1,86 @@
+.adm-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.adm-icon-wrap {
+  background-color: #eef2ff;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.adm-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.adm-subtitle {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.adm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.adm-stat-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.adm-stat-label {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.adm-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.adm-card-total {
+  background-color: #eef2ff;
+  border: 1px solid #c7d2fe;
+}
+.adm-card-total .adm-stat-label { color: #3730a3; }
+.adm-card-total .adm-stat-value { color: #312e81; }
+
+.adm-card-review {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+}
+.adm-card-review .adm-stat-label { color: #b45309; }
+.adm-card-review .adm-stat-value { color: #92400e; }
+
+.adm-card-enroll {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+.adm-card-enroll .adm-stat-label { color: #065f46; }
+.adm-card-enroll .adm-stat-value { color: #064e3b; }
+
+.adm-info-box {
+  padding: 1.5rem;
+  background-color: var(--bg-main);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.adm-info-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.adm-info-text {
+  color: var(--text-muted);
+  margin: 0;
+}
