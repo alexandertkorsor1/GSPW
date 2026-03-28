@@ -94,7 +94,11 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout, user, isOpen, setIsOpen })
         )}
       </nav>
 
-      <div style={{ padding: '1.5rem 1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ padding: '1.5rem 1rem', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <button onClick={() => handleMobileNav('settings')} style={getBtnStyle('settings')}>
+          <Settings size={20} />
+          Settings
+        </button>
         <button onClick={onLogout} style={{ ...getBtnStyle('logout'), color: '#fca5a5' }}>
           <LogOut size={20} />
           Sign Out

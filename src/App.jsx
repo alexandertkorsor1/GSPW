@@ -8,6 +8,7 @@ import Counseling from './components/Counseling';
 import Operations from './components/Operations';
 import Marketing from './components/Marketing';
 import Notifications from './components/Notifications';
+import Settings from './components/Settings';
 import Login from './components/Login';
 import { Bell, Menu } from 'lucide-react';
 
@@ -59,6 +60,7 @@ function App() {
     if (activeTab === 'counseling') return 'Counseling & Support';
     if (activeTab === 'operations') return 'Operations & Facilities';
     if (activeTab === 'marketing') return 'Marketing & Outreach';
+    if (activeTab === 'settings') return 'Account & App Settings';
     return 'Portal';
   };
 
@@ -111,7 +113,13 @@ function App() {
 
             <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--border)' }}></div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <div 
+              style={{ display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer', padding: '0.4rem 0.75rem', borderRadius: '8px', transition: 'background-color 0.2s' }}
+              onClick={() => setActiveTab('settings')}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#e2e8f0'}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              title="Open Account Settings"
+            >
               <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase' }}>
                 {user.name.substring(0, 2)}
               </div>
@@ -134,6 +142,7 @@ function App() {
           {activeTab === 'counseling' && <Counseling reports={reports.filter(r => r.department === 'Counseling')} user={user} onPostAnnouncement={handlePostAnnouncement} />}
           {activeTab === 'operations' && <Operations reports={reports.filter(r => r.department === 'Operations')} user={user} onPostAnnouncement={handlePostAnnouncement} />}
           {activeTab === 'marketing' && <Marketing reports={reports.filter(r => r.department === 'Marketing')} user={user} onPostAnnouncement={handlePostAnnouncement} />}
+          {activeTab === 'settings' && <Settings user={user} />}
         </div>
       </main>
     </div>
