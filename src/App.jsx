@@ -9,11 +9,12 @@ import Operations from './components/Operations';
 import Marketing from './components/Marketing';
 import Notifications from './components/Notifications';
 import Login from './components/Login';
-import { Bell } from 'lucide-react';
+import { Bell, Menu } from 'lucide-react';
 
 function App() {
   const [user, setUser] = useState(null);
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   const [announcements, setAnnouncements] = useState([
     { id: 1, text: 'Welcome to the Globe Scholars Pathway Portal! Ensure all operations align with standard workflow protocols.', date: '2026-03-25', targetDepartment: 'All', isRead: false },
@@ -79,12 +80,18 @@ function App() {
 
   return (
     <div className="app-container">
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={() => setUser(null)} user={user} />
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={() => setUser(null)} user={user} isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       
+      {isSidebarOpen && <div className="sidebar-overlay" onClick={() => setIsSidebarOpen(false)}></div>}
+
       <main className="main-content">
         <header className="top-header">
-          <div>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: '600', color: 'var(--text-main)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <button className="mobile-menu-btn" onClick={() => setIsSidebarOpen(true)} style={{ backgroundColor: 'var(--sidebar-bg)', color: 'white', padding: '0.5rem 0.8rem', borderRadius: '8px', border: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+              <Menu size={18} color="white" />
+              <span>Menu</span>
+            </button>
+            <h2 className="header-title" style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-main)', margin: 0 }}>
               {getHeaderTitle()}
             </h2>
           </div>
@@ -108,7 +115,7 @@ function App() {
               <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase' }}>
                 {user.name.substring(0, 2)}
               </div>
-              <div>
+              <div className="header-name-block">
                  <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>{user.name}</div>
                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                    {user.role === 'admin' ? 'System Administrator' : `${user.department} Department`}

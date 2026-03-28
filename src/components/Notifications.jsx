@@ -29,7 +29,7 @@ const Notifications = ({ user, announcements, onPostAnnouncement }) => {
           </div>
            
            <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1rem' }}>
-             <div style={{ display: 'flex', gap: '1rem', alignItems: 'stretch' }}>
+             <div className="responsive-flex" style={{ display: 'flex', gap: '1rem', alignItems: 'stretch' }}>
                <div style={{ flex: 2 }}>
                  <label style={{ fontSize: '0.85rem', fontWeight: '600', marginBottom: '0.5rem', display: 'block', color: 'var(--text-main)' }}>Message Content</label>
                  <input 
@@ -58,8 +58,8 @@ const Notifications = ({ user, announcements, onPostAnnouncement }) => {
                    <option value="Marketing">Marketing Department</option>
                  </select>
                </div>
-               <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-                 <button type="submit" className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', height: '42px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+               <div style={{ display: 'flex', alignItems: 'flex-end', marginTop: '0.5rem' }}>
+                 <button type="submit" className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', height: '42px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                    <Send size={18} /> Dispatch Notice
                  </button>
                </div>
