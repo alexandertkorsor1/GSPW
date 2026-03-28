@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Lock, User, KeyRound, CheckCircle2, ArrowLeft, Mail, ShieldCheck } from 'lucide-react';
-import logoImage from './WhatsApp Image 2026-03-27 at 10.52.40 PM.jpeg';
+import logoImage from './Globesholar.jpeg';
 import './Login.css';
 
 const Login = ({ onLogin }) => {

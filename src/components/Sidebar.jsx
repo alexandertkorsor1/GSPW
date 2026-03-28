@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutDashboard, FilePlus, DollarSign, GraduationCap, Heart, Wrench, Settings, LogOut, Megaphone, Clock, Bell, X } from 'lucide-react';
-import logoImage from './WhatsApp Image 2026-03-27 at 10.52.40 PM.jpeg';
+import logoImage from './Globesholar.jpeg';
 
 const Sidebar = ({ activeTab, setActiveTab, onLogout, user, isOpen, setIsOpen }) => {
   
