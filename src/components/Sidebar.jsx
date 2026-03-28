@@ -1,5 +1,6 @@
 import React from 'react';
-import { LayoutDashboard, FilePlus, Building2, DollarSign, GraduationCap, Heart, Wrench, Settings, LogOut, Megaphone, Clock, Bell, X } from 'lucide-react';
+import { LayoutDashboard, FilePlus, DollarSign, GraduationCap, Heart, Wrench, Settings, LogOut, Megaphone, Clock, Bell, X } from 'lucide-react';
+import logoImage from './WhatsApp Image 2026-03-27 at 10.52.40 PM.jpeg';
 
 const Sidebar = ({ activeTab, setActiveTab, onLogout, user, isOpen, setIsOpen }) => {
   
@@ -34,8 +35,8 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout, user, isOpen, setIsOpen })
     }}>
       <div style={{ padding: '2rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div style={{ backgroundColor: 'var(--primary)', color: 'white', padding: '0.5rem', borderRadius: '8px' }}>
-            <Building2 size={24} />
+          <div style={{ backgroundColor: 'white', padding: '0.25rem', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+            <img src={logoImage} alt="Globe Scholars Pathway Logo" style={{ width: '30px', height: '30px', borderRadius: '4px', objectFit: 'contain' }} />
           </div>
           <div>
             <h1 style={{ fontSize: '1.1rem', fontWeight: '700', color: 'white', lineHeight: '1.2' }}>Globe Scholars<br/>Pathway</h1>

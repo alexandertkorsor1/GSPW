@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Building2, Lock, User, KeyRound, CheckCircle2, ArrowLeft, Mail, ShieldCheck } from 'lucide-react';
+import { Lock, User, KeyRound, CheckCircle2, ArrowLeft, Mail, ShieldCheck } from 'lucide-react';
+import logoImage from './WhatsApp Image 2026-03-27 at 10.52.40 PM.jpeg';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
@@ -245,8 +246,8 @@ const Login = ({ onLogin }) => {
     <div className="login-container">
       <div className="login-box" style={{ animation: 'fadeIn 0.3s ease-out', maxWidth: '440px', padding: '3rem 2.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div style={{ backgroundColor: 'var(--primary)', width: '64px', height: '64px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', boxShadow: '0 8px 16px rgba(37, 99, 235, 0.25)' }}>
-            <Building2 size={32} color="white" />
+          <div style={{ backgroundColor: 'white', width: '72px', height: '72px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', boxShadow: '0 8px 24px rgba(0,0,0,0.1)', padding: '6px' }}>
+            <img src={logoImage} alt="Globe Scholars Pathway" style={{ width: '100%', height: '100%', borderRadius: '12px', objectFit: 'contain' }} />
           </div>
           <h2 style={{ fontSize: '1.75rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>Welcome Back</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Sign in to the Globe Scholars Pathway Portal</p>
