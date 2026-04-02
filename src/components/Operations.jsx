@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { Wrench, Send } from 'lucide-react';
 import ReportsTable from './ReportsTable';
+import { useToast } from './Toast';
 import './Operations.css';
 
 const Operations = ({ reports = [], user, onPostAnnouncement }) => {
   const [msg, setMsg] = useState('');
+  const { showToast } = useToast();
 
   const handleSend = (e) => {
     e.preventDefault();
     if (!msg.trim()) return;
     onPostAnnouncement(msg, 'Operations');
     setMsg('');
-    alert('Message sent directly to the Operations department!');
+    showToast('Notice successfully dispatched to Operations department.', 'success');
   };
 
   return (

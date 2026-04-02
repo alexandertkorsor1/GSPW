@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { User, Lock, Palette, Save, CheckCircle2 } from 'lucide-react';
+import { useToast } from './Toast';
 
 const Settings = ({ user }) => {
-  const [success, setSuccess] = useState('');
+  const { showToast } = useToast();
   
   // Forms
   const [currentPassword, setCurrentPassword] = useState('');
@@ -10,10 +11,9 @@ const Settings = ({ user }) => {
   
   const handlePasswordUpdate = (e) => {
     e.preventDefault();
-    setSuccess('Security credentials successfully updated.');
+    showToast('Security credentials successfully updated.', 'success');
     setCurrentPassword('');
     setNewPassword('');
-    setTimeout(() => setSuccess(''), 3000);
   };
 
   const changeTheme = (theme) => {
@@ -41,19 +41,11 @@ const Settings = ({ user }) => {
       root.style.setProperty('--sidebar-bg', '#0f172a');
       root.style.setProperty('--sidebar-hover', '#1e293b');
     }
-    setSuccess(`Application theme updated successfully.`);
-    setTimeout(() => setSuccess(''), 3000);
+    showToast(`Application theme updated to ${theme}.`, 'info');
   };
 
   return (
     <div style={{ animation: 'fadeIn 0.3s ease-out' }}>
-      {success && (
-        <div style={{ backgroundColor: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', padding: '1rem', borderRadius: '10px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <CheckCircle2 size={20} color="#10b981" /> 
-          <span style={{ fontWeight: '500' }}>{success}</span>
-        </div>
-      )}
-
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
         
         {/* Profile Card */}

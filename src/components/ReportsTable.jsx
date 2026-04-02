@@ -1,9 +1,14 @@
 import React from 'react';
 import { Download } from 'lucide-react';
+import { useToast } from './Toast';
 
 const ReportsTable = ({ reports, title = "Recent Submissions" }) => {
+  const { showToast } = useToast();
+
   const handleDownload = (report) => {
-    alert(`File downloaded: ${report.title.replace(/\s+/g, '_')}_final.pdf\n\n(This is a demonstration of the file payload access feature)`);
+    const fileName = `${report.title.replace(/\s+/g, '_')}_final.pdf`;
+    showToast(`Downloading: ${fileName}`, 'info');
+    // Simulate actual download logic if needed, but toast is enough for "professionalism" demo
   };
 
   return (

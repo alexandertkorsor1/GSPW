@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { GraduationCap, Send } from 'lucide-react';
 import ReportsTable from './ReportsTable';
+import { useToast } from './Toast';
 import './Admission.css';
 
 const Admission = ({ reports = [], user, onPostAnnouncement }) => {
   const [msg, setMsg] = useState('');
+  const { showToast } = useToast();
 
   const handleSend = (e) => {
     e.preventDefault();
     if (!msg.trim()) return;
     onPostAnnouncement(msg, 'Admission');
     setMsg('');
-    alert('Message sent directly to the Admission department!');
+    showToast('Notice successfully dispatched to Admission department.', 'success');
   };
 
   return (

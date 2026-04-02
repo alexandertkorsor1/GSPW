@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FileText, CheckCircle, Clock, Download } from 'lucide-react';
+import { useToast } from './Toast';
 
 const Dashboard = ({ reports, user }) => {
+  const { showToast } = useToast();
+
   const handleDownload = (report) => {
-    alert(`File downloaded: ${report.title.replace(/\s+/g, '_')}_final.pdf\n\n(This is a demonstration of the file payload access feature)`);
+    const fileName = `${report.title.replace(/\s+/g, '_')}_final.pdf`;
+    showToast(`Downloading: ${fileName}`, 'info');
   };
 
   const stats = [

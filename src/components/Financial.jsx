@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { DollarSign, Send } from 'lucide-react';
 import ReportsTable from './ReportsTable';
+import { useToast } from './Toast';
 import './Financial.css';
 
 const Financial = ({ reports = [], user, onPostAnnouncement }) => {
   const [msg, setMsg] = useState('');
+  const { showToast } = useToast();
 
   const handleSend = (e) => {
     e.preventDefault();
     if (!msg.trim()) return;
     onPostAnnouncement(msg, 'Financial');
     setMsg('');
-    alert('Message sent directly to the Financial department!');
+    showToast('Notice successfully dispatched to Financial department.', 'success');
   };
 
   return (

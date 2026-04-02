@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, User, KeyRound, CheckCircle2, ArrowLeft, Mail, ShieldCheck } from 'lucide-react';
+import { Lock, User, KeyRound, CheckCircle2, ArrowLeft, Mail, ShieldCheck, Eye, EyeOff } from 'lucide-react';
 import logoImage from './Globesholar.jpeg';
 import './Login.css';
 
@@ -10,6 +10,11 @@ const Login = ({ onLogin }) => {
   const [success, setSuccess] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
+  // Password Visibility States
+  const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   // Password Reset States (0 = Login, 1 = Enter Email, 2 = Enter OTP, 3 = New Password)
   const [resetStep, setResetStep] = useState(0);
   const [resetEmail, setResetEmail] = useState('');
@@ -206,13 +211,21 @@ const Login = ({ onLogin }) => {
                 <div className="input-with-icon">
                   <Lock size={18} className="input-icon" />
                   <input 
-                    type="password" 
+                    type={showNewPassword ? "text" : "password"} 
                     placeholder="Enter a strong password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     required
                     minLength={8}
+                    style={{ paddingRight: '2.5rem' }}
                   />
+                  <button 
+                    type="button"
+                    onClick={() => setShowNewPassword(!showNewPassword)}
+                    style={{ position: 'absolute', right: '12px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}
+                  >
+                    {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
                 </div>
               </div>
               <div className="form-group-custom" style={{ marginBottom: '2rem' }}>
@@ -220,13 +233,21 @@ const Login = ({ onLogin }) => {
                 <div className="input-with-icon">
                   <ShieldCheck size={18} className="input-icon" />
                   <input 
-                    type="password" 
+                    type={showConfirmPassword ? "text" : "password"} 
                     placeholder="Repeat new password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                     minLength={8}
+                    style={{ paddingRight: '2.5rem' }}
                   />
+                  <button 
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    style={{ position: 'absolute', right: '12px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}
+                  >
+                    {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
                 </div>
               </div>
               <button type="submit" className="login-btn" disabled={isLoading} style={{ height: '52px', fontSize: '1.05rem', borderRadius: '10px' }}>
@@ -281,12 +302,20 @@ const Login = ({ onLogin }) => {
             <div className="input-with-icon">
               <Lock size={18} className="input-icon" />
               <input 
-                type="password" 
+                type={showPassword ? "text" : "password"} 
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                style={{ paddingRight: '2.5rem' }}
               />
+              <button 
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ position: 'absolute', right: '12px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
             </div>
           </div>
 

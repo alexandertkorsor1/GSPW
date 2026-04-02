@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 import { Megaphone, Send } from 'lucide-react';
 import ReportsTable from './ReportsTable';
+import { useToast } from './Toast';
 import './Marketing.css';
 
 const Marketing = ({ reports = [], user, onPostAnnouncement }) => {
   const [msg, setMsg] = useState('');
+  const { showToast } = useToast();
 
   const handleSend = (e) => {
     e.preventDefault();
     if (!msg.trim()) return;
     onPostAnnouncement(msg, 'Marketing');
     setMsg('');
-    alert('Message sent directly to the Marketing department!');
+    showToast('Notice successfully dispatched to Marketing department.', 'success');
   };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       
       {user?.role === 'admin' && (
-        <div className="card" style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', padding: '1.25rem' }}>
-          <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#991b1b' }}>
+        <div className="card" style={{ backgroundColor: '#fdf2f8', border: '1px solid #fbcfe8', padding: '1.25rem' }}>
+          <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9d174d' }}>
             <Send size={18} /> Direct Notice to Marketing Department
           </h3>
           <form onSubmit={handleSend} style={{ display: 'flex', gap: '1rem' }}>
@@ -32,40 +34,40 @@ const Marketing = ({ reports = [], user, onPostAnnouncement }) => {
               style={{ flex: 1, backgroundColor: 'white' }}
               required
             />
-            <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#dc2626', borderColor: '#dc2626' }}>Dispatch Notice</button>
+            <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#db2777', borderColor: '#db2777' }}>Dispatch Notice</button>
           </form>
         </div>
       )}
 
       <div className="card">
-        <div className="mkt-header">
-          <div className="mkt-icon-wrap">
-            <Megaphone size={32} color="#dc2626" />
+        <div className="mar-header">
+          <div className="mar-icon-wrap">
+            <Megaphone size={32} color="#db2777" />
           </div>
           <div>
-            <h2 className="mkt-title">Marketing Department</h2>
-            <p className="mkt-subtitle">Outreach, public relations, and campaigns</p>
+            <h2 className="mar-title">Marketing Department</h2>
+            <p className="mar-subtitle">Digital outreach and brand management</p>
           </div>
         </div>
 
-        <div className="mkt-stats-grid">
-          <div className="mkt-stat-card mkt-card-reach">
-            <h4 className="mkt-stat-label">Total Reach (Q1)</h4>
-            <p className="mkt-stat-value">1.4M</p>
+        <div className="mar-stats-grid">
+          <div className="mar-stat-card mar-card-reach">
+            <h4 className="mar-stat-label">Social Reach</h4>
+            <p className="mar-stat-value">250K</p>
           </div>
-          <div className="mkt-stat-card mkt-card-campaigns">
-            <h4 className="mkt-stat-label">Active Campaigns</h4>
-            <p className="mkt-stat-value">3</p>
+          <div className="mar-stat-card mar-card-conversion">
+            <h4 className="mar-stat-label">Conv. Rate</h4>
+            <p className="mar-stat-value">3.2%</p>
           </div>
-          <div className="mkt-stat-card mkt-card-roi">
-            <h4 className="mkt-stat-label">Average Ad ROI</h4>
-            <p className="mkt-stat-value">225%</p>
+          <div className="mar-stat-card mar-card-leads">
+            <h4 className="mar-stat-label">Direct Leads</h4>
+            <p className="mar-stat-value">1,420</p>
           </div>
         </div>
 
-        <div className="mkt-info-box">
-          <h3 className="mkt-info-title">Current Campaigns</h3>
-          <p className="mkt-info-text">The "Future Leaders" social media push is outperforming expectations by 30%. The email newsletter open rates are holding steady at 24%.</p>
+        <div className="mar-info-box">
+          <h3 className="mar-info-title">Global Outreach Strategy</h3>
+          <p className="mar-info-text">Our new summer ad campaign is live across all platforms. Initial engagement metrics show a significant increase in international traffic.</p>
         </div>
       </div>
 
